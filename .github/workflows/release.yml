@@ -212,9 +212,8 @@ jobs:
         run: |
           cargo install cargo-deb
           cargo deb --no-build
-
           mkdir -p dist
-          mv target/debian/*.deb dist/
+          mv target/${{ matrix.target }}/debian/*.deb dist/
 
       - name: Build archive
         shell: bash
