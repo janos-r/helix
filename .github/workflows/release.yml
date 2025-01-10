@@ -211,7 +211,7 @@ jobs:
         if: matrix.build == 'x86_64-linux'
         run: |
           cargo install cargo-deb
-          mkdir target/release
+          mkdir -p target/release
           cp target/${{ matrix.target }}/release/hx target/release/
           cargo deb --no-build
           mkdir -p dist
